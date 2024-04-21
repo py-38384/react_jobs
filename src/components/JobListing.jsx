@@ -7,7 +7,7 @@ const JobListing = ({all = false, start = 1, end = 4}) => {
   const [loading, setLoading] = useState(true)
 
   const getData = async() => {
-    const apiUrl = all ? '/data' : '/data?_limit=3'
+    const apiUrl = all ? '/api/jobs' : '/api/jobs?_limit=3'
     try {
       const res = await fetch(apiUrl)
       const data = await res.json()

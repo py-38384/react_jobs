@@ -205,7 +205,7 @@ const EditJobPage = ({editJobSubmit}) => {
                 className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
                 type="submit"
               >
-                Edit Job
+                Update Job
               </button>
             </div>
           </form>
@@ -216,7 +216,7 @@ const EditJobPage = ({editJobSubmit}) => {
 }
 
 const editJobLoader = async ({ params }) => {
-    const res = await fetch(`/data/${params.id}`)
+    const res = await fetch(`/api/jobs/${params.id}`)
     const data = await res.json()
     return data
 }

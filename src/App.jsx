@@ -17,7 +17,7 @@ function App() {
 
   const addJob = async(newJob) => {
     try {
-      const res = await fetch('/data',{
+      const res = await fetch('/api/jobs',{
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -32,7 +32,7 @@ function App() {
   const deleteJob = async(id) => {
     console.log('Delete ',id)
     try {
-      const res = await fetch(`/data/${id}`,{
+      const res = await fetch(`/api/jobs/${id}`,{
         method: 'DELETE'
       })
     } catch (error) {
@@ -43,7 +43,7 @@ function App() {
   const editJob = async(job) => {
     console.log(job)
     try {
-      const res = await fetch(`/data/${job.id}`,{
+      const res = await fetch(`/api/jobs/${job.id}`,{
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
